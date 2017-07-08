@@ -1,8 +1,11 @@
 package org.bhoopendra.hibernate.beans;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -24,11 +27,23 @@ public class Employee {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
+	@OneToMany(mappedBy ="employee")
+	private List<Laptop> laptops;
 
 	@Transient
 	private String emp_test;
 
 	public Employee() {
+	}
+	
+	
+	public Employee(String name, int employeeId, Address address, List<Laptop> laptops, String emp_test) {
+		super();
+		this.name = name;
+		this.employeeId = employeeId;
+		this.address = address;
+		this.laptops = laptops;
+		this.emp_test = emp_test;
 	}
 
 	public Employee(String name, int employeeId, Address address) {
