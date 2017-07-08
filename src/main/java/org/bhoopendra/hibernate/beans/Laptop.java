@@ -1,9 +1,18 @@
 package org.bhoopendra.hibernate.beans;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class Laptop {
+	@Id
+	@Column(name="LAPTOP_ID")
 	private int id;
 	private String laptopType;
 	private String os;
+	@ManyToOne
 	private Employee employee;
 	public Laptop() {
 	}
