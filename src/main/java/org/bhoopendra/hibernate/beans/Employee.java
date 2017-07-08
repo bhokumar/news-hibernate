@@ -15,8 +15,16 @@ public class Employee {
 	@Id
 	@Column(name="EMPLOYEE_ID")
 	private int employeeId;
-	//private Address address;
+	private Address address;
 	
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
 	@Transient
 	private String emp_test;
 
@@ -27,6 +35,7 @@ public class Employee {
 		super();
 		this.name = name;
 		this.employeeId = employeeId;
+		this.address = address;
 	}
 
 	public String getName() {
@@ -45,11 +54,12 @@ public class Employee {
 		this.employeeId = employeeId;
 	}
 
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((address == null) ? 0 : address.hashCode());
+		result = prime * result + ((emp_test == null) ? 0 : emp_test.hashCode());
 		result = prime * result + employeeId;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
@@ -64,6 +74,16 @@ public class Employee {
 		if (getClass() != obj.getClass())
 			return false;
 		Employee other = (Employee) obj;
+		if (address == null) {
+			if (other.address != null)
+				return false;
+		} else if (!address.equals(other.address))
+			return false;
+		if (emp_test == null) {
+			if (other.emp_test != null)
+				return false;
+		} else if (!emp_test.equals(other.emp_test))
+			return false;
 		if (employeeId != other.employeeId)
 			return false;
 		if (name == null) {
@@ -76,6 +96,8 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return "Employee [name=" + name + ", employeeId=" + employeeId + "]";
+		return "Employee [name=" + name + ", employeeId=" + employeeId + ", address=" + address + ", emp_test="
+				+ emp_test + "]";
 	}
+
 }
