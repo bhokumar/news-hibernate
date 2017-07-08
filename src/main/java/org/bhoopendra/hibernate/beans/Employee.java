@@ -1,13 +1,18 @@
 package org.bhoopendra.hibernate.beans;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity(name = "EMPLOYEE_TABLE")
+@Entity
+@Table(name = "EMPLOYEE_TABLE")
 public class Employee {
 	
+	@Column(name="EMPLOYEE_NAME")
 	private String name;
 	@Id
+	@Column(name="EMPLOYEE_ID")
 	private int employeeId;
 	//private Address address;
 
