@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "EMPLOYEE_TABLE")
@@ -15,6 +16,9 @@ public class Employee {
 	@Column(name="EMPLOYEE_ID")
 	private int employeeId;
 	//private Address address;
+	
+	@Transient
+	private String emp_test;
 
 	public Employee() {
 	}
