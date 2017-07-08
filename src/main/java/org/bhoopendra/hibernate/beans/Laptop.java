@@ -5,6 +5,17 @@ public class Laptop {
 	private String laptopType;
 	private String os;
 	private Employee employee;
+	public Laptop() {
+	}
+	
+	public Laptop(int id, String laptopType, String os, Employee employee) {
+		super();
+		this.id = id;
+		this.laptopType = laptopType;
+		this.os = os;
+		this.employee = employee;
+	}
+
 	public Employee getEmployee() {
 		return employee;
 	}

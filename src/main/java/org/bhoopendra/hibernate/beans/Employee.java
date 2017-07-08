@@ -37,13 +37,12 @@ public class Employee {
 	}
 	
 	
-	public Employee(String name, int employeeId, Address address, List<Laptop> laptops, String emp_test) {
+	public Employee(String name, int employeeId, Address address, List<Laptop> laptops) {
 		super();
 		this.name = name;
 		this.employeeId = employeeId;
 		this.address = address;
 		this.laptops = laptops;
-		this.emp_test = emp_test;
 	}
 
 	public Employee(String name, int employeeId, Address address) {
