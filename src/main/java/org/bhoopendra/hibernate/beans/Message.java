@@ -1,8 +1,19 @@
 package org.bhoopendra.hibernate.beans;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "MESSAGES")
 public class Message {
+	@Column(name= "MESSAGE_ID")
+	@GeneratedValue
 	private Long Id;
+	@Column(name="MESSAGE_TEXT")
 	private String text;
+	
 	private Message nextMessage;
 	public Message() {
 	}

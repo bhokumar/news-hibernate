@@ -6,6 +6,7 @@ import java.util.List;
 import org.bhoopendra.hibernate.beans.Address;
 import org.bhoopendra.hibernate.beans.Employee;
 import org.bhoopendra.hibernate.beans.Laptop;
+import org.bhoopendra.hibernate.beans.Message;
 import org.bhoopendra.hibernate.conf.SessionFactoryCreator;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -30,5 +31,8 @@ public class App
     	Employee employee2 =session.get(Employee.class, 12457);
     	System.out.println(employee2);
     	session.close();
+    	Session session2 = sessionFactory.openSession();
+    	Transaction tx = session2.beginTransaction();
+    	
     }
 }
