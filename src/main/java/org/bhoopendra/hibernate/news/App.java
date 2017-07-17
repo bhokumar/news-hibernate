@@ -33,6 +33,10 @@ public class App
     	session.close();
     	Session session2 = sessionFactory.openSession();
     	Transaction tx = session2.beginTransaction();
+    	Message message = session2.find(Message.class, new Long(10));
+    	tx.commit();
+    	
+    	
     	
     }
 }
