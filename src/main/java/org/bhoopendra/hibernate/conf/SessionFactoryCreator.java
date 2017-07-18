@@ -16,11 +16,11 @@ public class SessionFactoryCreator {
 			final InputStream stream = new FileInputStream(propertyFileName);
 			Properties properties = new Properties();
 			properties.load(stream);
-			if("postgres".equals(properties.get("dataBaseType"))){
-			sessionFactory = new Configuration().configure("hibernate.cfg-postgres.xml").buildSessionFactory();
-			}else if("MySQL".equals(properties.get("dataBaseType"))){
+			if ("PostGres".equals(properties.get("dataBaseType"))) {
+				sessionFactory = new Configuration().configure("hibernate.cfg-postgres.xml").buildSessionFactory();
+			} else if ("MySQL".equals(properties.get("dataBaseType"))) {
 				sessionFactory = new Configuration().configure("hibernate.cfg-mysql.xml").buildSessionFactory();
-			}else{
+			} else {
 				sessionFactory = new Configuration().configure().buildSessionFactory();
 			}
 		} catch (IOException e) {
@@ -30,14 +30,9 @@ public class SessionFactoryCreator {
 	}
 
 	private SessionFactoryCreator() {
-
 	}
 
 	public static SessionFactory getSessionFactoryInstance() {
 		return sessionFactory;
-	}
-	
-	public static void main(String[] args) {
-		
 	}
 }
