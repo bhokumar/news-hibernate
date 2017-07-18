@@ -16,7 +16,6 @@ public class SessionFactoryCreator {
 			final InputStream stream = new FileInputStream(propertyFileName);
 			Properties properties = new Properties();
 			properties.load(stream);
-			System.out.println(properties.get("dataBaseType"));
 			if("postgres".equals(properties.get("dataBaseType"))){
 			sessionFactory = new Configuration().configure("hibernate.cfg-postgres.xml").buildSessionFactory();
 			}else if("MySQL".equals(properties.get("dataBaseType"))){
