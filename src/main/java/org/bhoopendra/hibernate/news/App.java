@@ -31,10 +31,12 @@ public class App
     	Employee employee2 =session.get(Employee.class, 12457);
     	System.out.println(employee2);
     	session.close();
+		sessionFactory.close();
+		/*
     	Session session2 = sessionFactory.openSession();
     	Transaction tx = session2.beginTransaction();
     	Message message = session2.find(Message.class, new Long(10));
-    	tx.commit();
+    	tx.commit();*/
     	
     	
     	

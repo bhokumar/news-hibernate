@@ -11,6 +11,8 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
+		<mysql-version>6.0.5</mysql-version>
+		<java-version>1.8</java-version>
 		<junit-version>3.8.1</junit-version>
 		<hibernate-core-version>5.2.10.Final</hibernate-core-version>
 		<postgresql-version>9.4-1200-jdbc41</postgresql-version>
@@ -37,8 +39,15 @@
 				<artifactId>postgresql</artifactId>
 				<version>${postgresql-version}</version>
 			</dependency>
+
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql-version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -52,7 +61,23 @@
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
 
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java-version}</source>
+					<target>${java-version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 </project>
