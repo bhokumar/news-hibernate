@@ -21,6 +21,8 @@ public class SessionFactoryCreator {
 			sessionFactory = new Configuration().configure("hibernate.cfg-postgres.xml").buildSessionFactory();
 			}else if("MySQL".equals(properties.get("dataBaseType"))){
 				sessionFactory = new Configuration().configure("hibernate.cfg-mysql.xml").buildSessionFactory();
+			}else{
+				sessionFactory = new Configuration().configure().buildSessionFactory();
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
