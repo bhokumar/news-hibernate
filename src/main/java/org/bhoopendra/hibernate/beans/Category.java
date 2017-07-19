@@ -8,6 +8,23 @@ public class Category implements Serializable {
 	private String name;
 	private Category parentCategory;
 	private Set<Category> childCategories;
+	private Set<Item> items;
+	public Set<Category> getChildCategories() {
+		return childCategories;
+	}
+
+	public void setChildCategories(Set<Category> childCategories) {
+		this.childCategories = childCategories;
+	}
+
+	public Set<Item> getItems() {
+		return items;
+	}
+
+	public void setItems(Set<Item> items) {
+		this.items = items;
+	}
+
 	public String getName() {
 		return name;
 	}

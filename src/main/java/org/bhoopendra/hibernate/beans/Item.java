@@ -63,6 +63,14 @@ public class Item {
 		this.categories = categories;
 	}
 	
+	public void addCategory(Category category) {
+		if (category == null)
+		throw new IllegalArgumentException("Null category");
+		category.getItems().add(this);
+		categories.add(category);
+		}
+	
+	
 	public Item() {
 	}
 	
