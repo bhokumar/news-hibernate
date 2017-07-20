@@ -2,9 +2,12 @@ package org.bhoopendra.hibernate.beans;
 
 import java.util.Date;
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
+import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
@@ -34,6 +37,24 @@ public class UserDetails {
 
 	@Temporal(TemporalType.DATE)
 	private Date joinedDate;
+	
+	@Embedded
+	@AttributeOverrides({
+	@AttributeOverride(name="street",column=@Column(name="OFFICE_STREET")),
+	@AttributeOverride(name="city",column=@Column(name="OFFICE_CITY")),
+	@AttributeOverride(name="state",column=@Column(name="OFFICE_STATE")),
+	@AttributeOverride(name="pinCode",column=@Column(name="OFFICE_PINCODE")),
+	})
+	private Address officeAddress;
+	
+	@Embedded
+	@AttributeOverrides({
+		@AttributeOverride(name="street",column=@Column(name="HOME_STREET")),
+		@AttributeOverride(name="city",column=@Column(name="HOMEE_CITY")),
+		@AttributeOverride(name="state",column=@Column(name="HOME_STATE")),
+		@AttributeOverride(name="pinCode",column=@Column(name="HOME_PINCODE")),
+		})
+	private Address homeAddress;
 
 	public UserDetails(String userName, Date joinedDate) {
 		super();
