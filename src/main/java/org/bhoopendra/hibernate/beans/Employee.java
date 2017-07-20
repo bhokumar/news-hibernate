@@ -3,6 +3,7 @@ package org.bhoopendra.hibernate.beans;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,6 +22,7 @@ public class Employee {
 	@Column(name="EMPLOYEE_ID")
 	@GeneratedValue(strategy=GenerationType.AUTO) //Its a default strategy.
 	private int employeeId;
+	@Embedded
 	private Address address;
 	
 	public Address getAddress() {
