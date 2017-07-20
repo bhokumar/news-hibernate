@@ -2,6 +2,8 @@ package org.bhoopendra.hibernate.beans;
 
 import java.io.Serializable;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -22,6 +24,7 @@ public class User implements Serializable {
 	@GeneratedValue
 	private Long id;
 
+	@Access(AccessType.FIELD)
 	private String userName;
 	@Transient
 	private Address address;
