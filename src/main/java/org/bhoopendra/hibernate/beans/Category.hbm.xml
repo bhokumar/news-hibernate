@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+<hibernate-mapping>
+	<class name="org.bhoopendra.hibernate.beans" table="CATEGORY">
+		<id name="id" column="CATEGORY_ID" type="long">
+		<generator class="native"></generator>
+		</id>
+		<property name="name" column="CATEGORY_NAME" type="string"></property>
+	</class>
+</hibernate-mapping>
