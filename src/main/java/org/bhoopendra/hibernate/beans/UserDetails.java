@@ -20,6 +20,8 @@ public class UserDetails {
 	
 	@Lob
 	private String description;
+	public UserDetails() {
+	}
 	public String getDescription() {
 		return description;
 	}
@@ -39,6 +41,13 @@ public class UserDetails {
 		this.joinedDate = joinedDate;
 	}
 
+	
+	public UserDetails(String description, String userName, Date joinedDate) {
+		super();
+		this.description = description;
+		this.userName = userName;
+		this.joinedDate = joinedDate;
+	}
 	public int getUserId() {
 		return userId;
 	}
@@ -61,6 +70,12 @@ public class UserDetails {
 
 	public void setJoinedDate(Date joinedDate) {
 		this.joinedDate = joinedDate;
+	}
+	
+	@Override
+	public String toString() {
+		return "UserDetails [userId=" + userId + ", description=" + description + ", userName=" + userName
+				+ ", joinedDate=" + joinedDate + "]";
 	}
 
 }

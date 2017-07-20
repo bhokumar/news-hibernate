@@ -15,9 +15,15 @@ public class AppClient2 {
 		SessionFactory sessionFactory = SessionFactoryCreator.getSessionFactoryInstance();
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
-		session.save(new UserDetails("user1", new Date(2015, 12, 11,11,23)));
+		session.save(new UserDetails("description1","user1", new Date(2015, 12, 11,11,23)));
 		transaction.commit();
 		session.close();
+		
+		Session session2 = sessionFactory.openSession();
+		Transaction transaction2 = session2.beginTransaction();
+		UserDetails userDetails = session2.get(UserDetails.class, 1);
+		System.out.println(userDetails);
+		
 	}
 
 }
