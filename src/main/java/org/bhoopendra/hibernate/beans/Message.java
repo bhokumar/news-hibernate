@@ -4,16 +4,20 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "MESSAGES")
 public class Message {
+	@javax.persistence.Id
+	@GeneratedValue
+	private long id;
 	@Column(name= "MESSAGE_ID")
 	@GeneratedValue
 	private Long Id;
 	@Column(name="MESSAGE_TEXT")
 	private String text;
-	
+	@Transient
 	private Message nextMessage;
 	public Message() {
 	}
