@@ -18,5 +18,6 @@
 		<mapping class="org.bhoopendra.hibernate.beans.Item" />
 		<mapping class="org.bhoopendra.hibernate.beans.Message" />
 		<mapping class="org.bhoopendra.hibernate.beans.User" />
+		<mapping class="org.bhoopendra.hibernate.beans.UserDetails" />
 	</session-factory>
 </hibernate-configuration>
