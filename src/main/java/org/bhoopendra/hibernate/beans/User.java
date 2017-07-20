@@ -2,10 +2,14 @@ package org.bhoopendra.hibernate.beans;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.persistence.Transient;
 
+@Entity
+@Table(name="USER")
 public class User implements Serializable {
 	private static final long serialVersionUID = 4653874200421257377L;
 
