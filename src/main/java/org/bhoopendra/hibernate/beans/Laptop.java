@@ -12,11 +12,11 @@ import javax.persistence.TableGenerator;
 
 @Entity
 @Access(AccessType.FIELD)
-@TableGenerator(name="tableGenerator",initialValue= 1000, allocationSize=100)
+//@TableGenerator(name="tableGenerator",initialValue= 1000, allocationSize=100)
 public class Laptop {
 	@Id
 	@Column(name="LAPTOP_ID")
-	@GeneratedValue(strategy=GenerationType.TABLE,generator="tableGenerator")
+	@GeneratedValue//(strategy=GenerationType.TABLE,generator="tableGenerator")
 	private int id;
 	private String laptopType;
 	private String os;

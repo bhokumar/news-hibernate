@@ -11,7 +11,7 @@ import javax.persistence.Transient;
 @Table(name = "MESSAGES")
 public class Message {
 	@javax.persistence.Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue//(strategy=GenerationType.IDENTITY)
 	private long id;
 	@Column(name= "MESSAGE_ID")
 	@GeneratedValue

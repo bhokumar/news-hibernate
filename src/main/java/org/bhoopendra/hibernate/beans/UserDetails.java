@@ -15,7 +15,7 @@ import javax.persistence.TemporalType;
 @Table(name = "USER_DETAILS")
 public class UserDetails {
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue//(strategy = GenerationType.SEQUENCE)
 	private int userId;
 	
 	@Lob

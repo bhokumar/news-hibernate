@@ -20,7 +20,7 @@ public class Employee {
 	private String name;
 	@Id
 	@Column(name="EMPLOYEE_ID")
-	@GeneratedValue(strategy=GenerationType.AUTO) //Its a default strategy.
+	@GeneratedValue//(strategy=GenerationType.AUTO) //Its a default strategy.
 	private int employeeId;
 	@Embedded
 	private Address address;
