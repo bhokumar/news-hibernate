@@ -3,6 +3,7 @@ package org.bhoopendra.hibernate.beans;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -10,7 +11,7 @@ import javax.persistence.Transient;
 @Table(name = "MESSAGES")
 public class Message {
 	@javax.persistence.Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 	@Column(name= "MESSAGE_ID")
 	@GeneratedValue

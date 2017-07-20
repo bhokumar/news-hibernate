@@ -4,14 +4,19 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.TableGenerator;
 
 @Entity
 @Access(AccessType.FIELD)
+@TableGenerator(name="tableGenerator",initialValue= 1000, allocationSize=100)
 public class Laptop {
 	@Id
 	@Column(name="LAPTOP_ID")
+	@GeneratedValue(strategy=GenerationType.TABLE,generator="tableGenerator")
 	private int id;
 	private String laptopType;
 	private String os;
