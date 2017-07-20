@@ -1,11 +1,14 @@
 package org.bhoopendra.hibernate.beans;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
+@Access(AccessType.FIELD)
 public class Laptop {
 	@Id
 	@Column(name="LAPTOP_ID")
