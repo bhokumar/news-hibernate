@@ -2,6 +2,7 @@ package org.bhoopendra.hibernate.news;
 
 
 import java.util.Date;
+import java.util.HashMap;
 
 import org.bhoopendra.hibernate.beans.UserDetails;
 import org.bhoopendra.hibernate.conf.SessionFactoryCreator;
@@ -23,6 +24,7 @@ public class AppClient2 {
 		Transaction transaction2 = session2.beginTransaction();
 		UserDetails userDetails = session2.get(UserDetails.class, 1);
 		System.out.println(userDetails);
+		new HashMap<>();
 		
 	}
 
