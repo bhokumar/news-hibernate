@@ -18,6 +18,7 @@
 		<postgresql-version>9.4-1200-jdbc41</postgresql-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jersey-version>2.6</jersey-version>
+		<version-media-moxy>2.6</version-media-moxy>
 	</properties>
 
 	<dependencyManagement>
@@ -53,6 +54,11 @@
 				<version>${jersey-version}</version>
 			</dependency>
 
+			<dependency>
+				<groupId>org.glassfish.jersey.media</groupId>
+				<artifactId>jersey-media-moxy</artifactId>
+				<version>${version-media-moxy}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -76,6 +82,10 @@
 		<dependency>
 			<groupId>org.glassfish.jersey.containers</groupId>
 			<artifactId>jersey-container-servlet</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-moxy</artifactId>
 		</dependency>
 	</dependencies>
 
