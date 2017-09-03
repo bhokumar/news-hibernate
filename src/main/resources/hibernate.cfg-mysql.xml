@@ -10,7 +10,7 @@
 		<property name="hibernate.connection.username">root</property>
 		<property name="hibernate.connection.password">rathore</property>
 		<property name="connection_pool_size">20</property>
-		<property name="hbm2ddl.auto">create</property>
+		<property name="hbm2ddl.auto">update</property>
 		<property name="show_sql">true</property>
 		<mapping class="org.bhoopendra.hibernate.beans.Employee" />
 		<mapping class="org.bhoopendra.hibernate.beans.Laptop" />
