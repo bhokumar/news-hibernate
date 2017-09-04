@@ -19,6 +19,15 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jersey-version>2.6</jersey-version>
 		<version-media-moxy>2.6</version-media-moxy>
+		
+		<openwebbeans.version>1.6.2</openwebbeans.version>
+		<apache.geronimo.version>1.0</apache.geronimo.version>
+		<deltaspike-version>1.5.2</deltaspike-version>
+		<junit-version>4.11</junit-version>
+		<war-plugin-version>3.0.0</war-plugin-version>
+		<compiler-plugin-version>3.5.1</compiler-plugin-version>
+		<commons.lang.version>2.6</commons.lang.version>
+		<commons-io-version>2.5</commons-io-version>
 	</properties>
 
 	<dependencyManagement>
@@ -59,6 +68,89 @@
 				<artifactId>jersey-media-moxy</artifactId>
 				<version>${version-media-moxy}</version>
 			</dependency>
+			
+			<dependency>
+				<groupId>org.apache.geronimo.specs</groupId>
+				<artifactId>geronimo-annotation_1.2_spec</artifactId>
+				<version>${apache.geronimo.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.geronimo.specs</groupId>
+				<artifactId>geronimo-interceptor_1.2_spec</artifactId>
+				<version>${apache.geronimo.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.geronimo.specs</groupId>
+				<artifactId>geronimo-atinject_1.0_spec</artifactId>
+				<version>${apache.geronimo.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.geronimo.specs</groupId>
+				<artifactId>geronimo-jcdi_1.1_spec</artifactId>
+				<version>${apache.geronimo.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.geronimo.specs</groupId>
+				<artifactId>geronimo-el_2.2_spec</artifactId>
+				<version>${apache.geronimo.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.openwebbeans</groupId>
+				<artifactId>openwebbeans-impl</artifactId>
+				<version>${openwebbeans.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.openwebbeans</groupId>
+				<artifactId>openwebbeans-spi</artifactId>
+				<version>${openwebbeans.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit-version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.deltaspike.core</groupId>
+				<artifactId>deltaspike-core-api</artifactId>
+				<version>${deltaspike-version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.deltaspike.core</groupId>
+				<artifactId>deltaspike-core-impl</artifactId>
+				<version>${deltaspike-version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.deltaspike.cdictrl</groupId>
+				<artifactId>deltaspike-cdictrl-owb</artifactId>
+				<version>${deltaspike-version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.deltaspike.modules</groupId>
+				<artifactId>deltaspike-test-control-module-api</artifactId>
+				<version>${deltaspike-version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.deltaspike.modules</groupId>
+				<artifactId>deltaspike-test-control-module-impl</artifactId>
+				<version>${deltaspike-version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>commons-lang</groupId>
+				<artifactId>commons-lang</artifactId>
+				<version>${commons.lang.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>${commons-io-version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -86,6 +178,74 @@
 		<dependency>
 			<groupId>org.glassfish.jersey.media</groupId>
 			<artifactId>jersey-media-moxy</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-annotation_1.2_spec</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-interceptor_1.2_spec</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-atinject_1.0_spec</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-jcdi_1.1_spec</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-el_2.2_spec</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.openwebbeans</groupId>
+			<artifactId>openwebbeans-impl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.openwebbeans</groupId>
+			<artifactId>openwebbeans-spi</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.deltaspike.core</groupId>
+			<artifactId>deltaspike-core-api</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.deltaspike.core</groupId>
+			<artifactId>deltaspike-core-impl</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.deltaspike.cdictrl</groupId>
+			<artifactId>deltaspike-cdictrl-owb</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.deltaspike.modules</groupId>
+			<artifactId>deltaspike-test-control-module-api</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.deltaspike.modules</groupId>
+			<artifactId>deltaspike-test-control-module-impl</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
 		</dependency>
 	</dependencies>
 
