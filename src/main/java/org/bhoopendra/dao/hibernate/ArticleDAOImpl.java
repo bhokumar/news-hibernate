@@ -16,6 +16,7 @@ public class ArticleDAOImpl implements ArticleDAO {
 		final Transaction transaction = session.beginTransaction();
 		session.save(article);
 		transaction.commit();
+		session.close();
 		return article;
 	}
 
