@@ -1,33 +1,39 @@
 package org.bhoopendra.hibernate.beans;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 @Entity
 @Table(name = "MESSAGES")
 public class Message {
 	@javax.persistence.Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long id;
-	@Column(name= "MESSAGE_ID")
 	@GeneratedValue
-	private Long Id;
+	@Column(name="MESSAGE_ID")
+	private long id;
+	
 	@Column(name="MESSAGE_TEXT")
 	private String text;
-	@Transient
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="NEXT_MESSAGING_ID")
 	private Message nextMessage;
 	public Message() {
 	}
-	public Long getId() {
-		return Id;
+	
+	
+	public Message(long id, String text, Message nextMessage) {
+		super();
+		this.id = id;
+		this.text = text;
+		this.nextMessage = nextMessage;
 	}
-	public void setId(Long id) {
-		Id = id;
-	}
+
+
 	public String getText() {
 		return text;
 	}
@@ -40,6 +46,7 @@ public class Message {
 	public void setNextMessage(Message nextMessage) {
 		this.nextMessage = nextMessage;
 	}
+	
 	
 	
 }
