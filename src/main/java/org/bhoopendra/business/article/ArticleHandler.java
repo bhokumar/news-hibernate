@@ -7,13 +7,15 @@ import org.bhoopendra.dao.hibernate.ArticleDAOImpl;
 import org.bhoopendra.hibernate.beans.Article;
 
 public class ArticleHandler {
-	private static final ArticleDAO articleDAO = new ArticleDAOImpl();
 	
-	public static Article saveArticlefinal(final Article article) {
+	
+	private ArticleDAO articleDAO = new ArticleDAOImpl();
+		
+	public  Article saveArticlefinal(final Article article) {
 		return articleDAO.saveArticle(article);
 	}
 	
-	public static List<Article> getAllArticles(){
+	public List<Article> getAllArticles(){
 		return articleDAO.getAllArticles();
 	}
 

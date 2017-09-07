@@ -20,5 +20,7 @@
 		<mapping class="org.bhoopendra.hibernate.beans.User" />
 		<mapping class="org.bhoopendra.hibernate.beans.UserDetails" />
 		<mapping class="org.bhoopendra.hibernate.beans.Article" />
+		<mapping class="org.bhoopendra.hibernate.beans.Author" />
+		<mapping class="org.bhoopendra.hibernate.beans.Book" />
 	</session-factory>
 </hibernate-configuration>

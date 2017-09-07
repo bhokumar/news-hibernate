@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.bhoopendra.dao.ArticleDAO;
 import org.bhoopendra.hibernate.beans.Article;
+import org.bhoopendra.hibernate.beans.Book;
 import org.bhoopendra.hibernate.conf.SessionFactoryCreator;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+
 
 public class ArticleDAOImpl implements ArticleDAO {
 

@@ -17,16 +17,18 @@ import org.bhoopendra.hibernate.beans.Article;
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class ArticleRestController {
-
+	
+	private ArticleHandler articleHandler = new ArticleHandler();
 	private static final Logger logger = Logger.getLogger(ArticleRestController.class.getName());
 
+	
 	@GET
 	public List<Article> getArticles() {
 		logger.info("Request started!");
 		final long startTime = System.currentTimeMillis();
-		List<Article> articles = ArticleHandler.getAllArticles();
+		List<Article> articles = articleHandler.getAllArticles();
 		final long finishTime = System.currentTimeMillis();
-		logger.info("Request Finished : "+(finishTime-startTime));
+		logger.info("Request Finished : " + (finishTime - startTime));
 		return articles;
 	}
 
@@ -34,9 +36,9 @@ public class ArticleRestController {
 	public Article createArticle(final Article article) {
 		logger.info("Request started!");
 		final long startTime = System.currentTimeMillis();
-		final Article response = ArticleHandler.saveArticlefinal(article);
+		final Article response = articleHandler.saveArticlefinal(article);
 		final long finishTime = System.currentTimeMillis();
-		logger.info("Request Finished : "+(finishTime-startTime));
+		logger.info("Request Finished : " + (finishTime - startTime));
 		return response;
 	}
 
