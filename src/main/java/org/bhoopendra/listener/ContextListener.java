@@ -13,7 +13,7 @@ public class ContextListener implements ServletContextListener {
 
 	@Override
 	public void contextDestroyed(ServletContextEvent arg0) {
-		System.out.println("Context destroyed!");
+		System.out.println("Context is destroyed");
 	}
 
 }
