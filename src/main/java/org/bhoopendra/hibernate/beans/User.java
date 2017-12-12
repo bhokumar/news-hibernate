@@ -2,17 +2,10 @@ package org.bhoopendra.hibernate.beans;
 
 import java.io.Serializable;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
 @Entity
-@Table(name="USER")
+@Table(name="USERS")
 public class User implements Serializable {
 	private static final long serialVersionUID = 4653874200421257377L;
 
@@ -23,10 +16,12 @@ public class User implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@Column(name = "USER_ID")
 	private Long id;
 
 	@Access(AccessType.FIELD)
 	private String userName;
+
 	@Transient
 	private Address address;
 
